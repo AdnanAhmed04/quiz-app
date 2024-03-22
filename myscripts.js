@@ -1,5 +1,4 @@
-
-var questions = [
+let questions = [
     {
         question: 'What does HTML stand for?',
         option1: 'Hyperlinks and Text Markup Language',
@@ -21,30 +20,36 @@ var questions = [
         option3: '<h1>',
         correctOption: "<h1>"
     }
-]
-
+];
 
 let i = 0;
-let qust = document.getElementById('qust')?.innerText
-let rad1 = document.getElementById('opt1')?.innerText
-let rad2 = document.getElementById('opt2')?.innerText
-let rad3 = document.getElementById('opt3')?.innerText
 
 function next_question() {
+    let qust = document.getElementById('qust');
+    let opt1 = document.getElementById('opt1');
+    let opt2 = document.getElementById('opt2');
+    let opt3 = document.getElementById('opt3');
 
     if (i < questions.length) {
-        console.log(i)
-        document.getElementById('qust').innerText = questions[i].question
-        document.getElementById('opt1').innerText = questions[i].option1
-        document.getElementById('opt2').innerText = questions[i].option2
-        document.getElementById('opt3').innerText = questions[i].option3
+        qust.innerText = questions[i].question;
+        opt1.innerText = questions[i].option1;
+        opt2.innerText = questions[i].option2;
+        opt3.innerText = questions[i].option3;
         i++;
+    } else {
+        document.getElementById('btn').innerText = 'Finish';
     }
-    else {
-        document.getElementById('btn').innerText = 'Finish'
+}
+
+function remove_disable() {
+    let btn = document.getElementById('btn');
+    btn.disabled = false;
+
+}
+
+function unckecked_radio_btn() {
+    let unckecked = document.getElementsByName('option')
+    for (var i = 0; i < unckecked.length; i++) {
+        unckecked[i].checked = false
     }
-
-
-
-    // console.log(qust, rad1, rad2, rad3)
 }
