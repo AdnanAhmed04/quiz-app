@@ -53,3 +53,4 @@ function unckecked_radio_btn() {
         unckecked[i].checked = false
     }
 }
+console.log('working')
