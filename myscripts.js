@@ -51,6 +51,8 @@ function unckecked_radio_btn() {
     let unckecked = document.getElementsByName('option')
     for (var i = 0; i < unckecked.length; i++) {
         unckecked[i].checked = false
+        console.log('loop hai')
+
     }
 }
 console.log('working')
